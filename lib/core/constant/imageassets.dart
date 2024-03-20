@@ -5,4 +5,6 @@ class Images {
   static const String pointlogo = "$imagebaserout/bank.png";
   static const String arcivelogo = "$imagebaserout/archivelogo.png";
   static const String createlogo = "$imagebaserout/plus.gif";
+  static const String updatelogo = "$imagebaserout/updatedatabase.gif";
+  static const String showlogo = "$imagebaserout/Showpoint.gif";
 }

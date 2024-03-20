@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:transferapp/core/constant/routs.dart';
 
 import '../../core/constant/color.dart';
 import '../../core/constant/imageassets.dart';
@@ -98,7 +100,11 @@ Widget archivecard({
             Row(
               children: [
                 smallbutton(
-                    function: () {}, name: "Edit", color: Appcolor.primary1),
+                    function: () {
+                      Get.toNamed(Approutes.editarchive);
+                    },
+                    name: "Edit",
+                    color: Appcolor.primary1),
                 const SizedBox(
                   width: 16,
                 ),

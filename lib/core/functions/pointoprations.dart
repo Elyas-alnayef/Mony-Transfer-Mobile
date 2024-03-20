@@ -34,7 +34,16 @@ class Pointoprations {
     }
   }
 
-  void updatepoint() {}
+  static void updatepoint({
+    int? id,
+    String? token,
+    String? url,
+    String? name,
+    String? adress,
+    int? currentbalance,
+    String? country,
+    int? managerid,
+  }) async {}
   static void createpoint(
       {String? apiurl,
       String? name,

@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
+import "package:transferapp/core/constant/routs.dart";
 
 import "../../core/constant/color.dart";
 import "../../core/constant/imageassets.dart";
@@ -22,7 +24,7 @@ Widget pointcard({
           ],
           borderRadius: BorderRadius.circular(20),
           border: Border.all(width: 0.05)),
-      height: 230,
+      height: 200,
       width: double.infinity,
       child: Column(
         children: [
@@ -58,21 +60,6 @@ Widget pointcard({
                 Row(
                   children: [
                     Text(
-                      "City :",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    Container(
-                        width: 100,
-                        child:
-                            Text("$adress", overflow: TextOverflow.ellipsis)),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    Text(
                       "Manager :",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
@@ -84,23 +71,17 @@ Widget pointcard({
                 ),
                 Row(
                   children: [
-                    Text(
-                      "Current Balance :",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(Approutes.showpoint);
+                      },
+                      child: Text(
+                        "More details ..",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Appcolor.primary1),
+                      ),
                     ),
-                    Text("$currentbalance\$"),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Created At :",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    Text("$createdate"),
                   ],
                 ),
               ],
@@ -122,14 +103,20 @@ Widget pointcard({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               smallbutton(
-                  function: () {},
+                  function: () {
+                    Get.toNamed(Approutes.createarchive);
+                  },
                   name: "Transfer",
                   color: Appcolor.buttoncolor),
               const SizedBox(
                 width: 16,
               ),
               smallbutton(
-                  function: () {}, name: "Edit", color: Appcolor.primary1),
+                  function: () {
+                    Get.toNamed(Approutes.updatepoint);
+                  },
+                  name: "Edit",
+                  color: Appcolor.primary1),
               const SizedBox(
                 width: 16,
               ),
