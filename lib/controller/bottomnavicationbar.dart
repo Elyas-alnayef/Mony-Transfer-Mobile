@@ -22,6 +22,7 @@ class Bottomnavicationbarcontroller extends GetxController {
 
         break;
       case 3:
+        Get.toNamed(Approutes.userindex);
         break;
       default:
     }

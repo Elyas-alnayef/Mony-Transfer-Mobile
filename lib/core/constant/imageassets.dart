@@ -7,4 +7,5 @@ class Images {
   static const String createlogo = "$imagebaserout/plus.gif";
   static const String updatelogo = "$imagebaserout/updatedatabase.gif";
   static const String showlogo = "$imagebaserout/Showpoint.gif";
+  static const String userlogo = "$imagebaserout/user.png";
 }

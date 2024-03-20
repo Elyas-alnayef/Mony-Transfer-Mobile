@@ -1,18 +1,13 @@
 import "package:flutter/material.dart";
-import "package:get/get.dart";
-import "package:transferapp/core/constant/routs.dart";
 
 import "../../core/constant/color.dart";
 import "../../core/constant/imageassets.dart";
 import "smallbutton.dart";
 
-Widget pointcard({
+Widget usercard({
   required String name,
-  required String country,
-  required String adress,
-  required String manager,
-  required String currentbalance,
-  required String createdate,
+  required String role,
+  required String email,
 }) =>
     Container(
       padding: const EdgeInsets.all(16.0),
@@ -48,10 +43,10 @@ Widget pointcard({
                 Row(
                   children: [
                     Text(
-                      "Country :",
+                      "Role :",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
-                    Text("$country"),
+                    Text("$role"),
                   ],
                 ),
                 SizedBox(
@@ -60,28 +55,12 @@ Widget pointcard({
                 Row(
                   children: [
                     Text(
-                      "Manager :",
+                      "Email :",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
-                    Text("$manager", overflow: TextOverflow.ellipsis),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Get.toNamed(Approutes.showpoint);
-                      },
-                      child: Text(
-                        "More details ..",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Appcolor.primary1),
-                      ),
-                    ),
+                    Container(
+                        width: 100,
+                        child: Text("$email", overflow: TextOverflow.ellipsis)),
                   ],
                 ),
               ],
@@ -93,7 +72,7 @@ Widget pointcard({
                 Container(
                   height: 100,
                   width: 100,
-                  child: Image.asset(Images.pointlogo),
+                  child: Image.asset(Images.userlogo),
                 ),
               ],
             ),
@@ -103,20 +82,12 @@ Widget pointcard({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               smallbutton(
-                  function: () {
-                    Get.toNamed(Approutes.createarchive);
-                  },
-                  name: "Transfer",
-                  color: Appcolor.buttoncolor),
+                  function: () {}, name: "Details", color: Appcolor.primary1),
               const SizedBox(
                 width: 16,
               ),
               smallbutton(
-                  function: () {
-                    Get.toNamed(Approutes.updatepoint);
-                  },
-                  name: "Edit",
-                  color: Appcolor.primary1),
+                  function: () {}, name: "Edit", color: Appcolor.primary1),
               const SizedBox(
                 width: 16,
               ),

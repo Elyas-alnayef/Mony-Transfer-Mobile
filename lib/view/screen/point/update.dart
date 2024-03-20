@@ -7,6 +7,7 @@ import '../../../core/constant/color.dart';
 import '../../widget/bottomnavicationbar.dart';
 import '../../widget/appbar.dart';
 import '../../widget/drawer.dart';
+import '../../widget/dropdownb.dart';
 import '../../widget/textfield.dart';
 
 class Updatepoint extends StatelessWidget {
@@ -77,16 +78,8 @@ class Updatepoint extends StatelessWidget {
               SizedBox(
                 height: 24,
               ),
-              Container(
-                padding: EdgeInsets.all(8),
-                height: 48,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Appcolor.subtitl)),
-                child: DropdownButton(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  isExpanded: true,
-                  hint: Text("Choose Manager"),
+              dropdown(
+                  hint: "Manager",
                   items: [
                     DropdownMenuItem(
                       child: Text("Elyas"),
@@ -97,16 +90,14 @@ class Updatepoint extends StatelessWidget {
                       value: "2",
                     ),
                     DropdownMenuItem(
-                      child: Text("Khaled"),
+                      child: Text("Sameer"),
                       value: "3",
                     ),
                   ].toList(),
-                  onChanged: (value) {
-                    print(value);
-                  },
-                  value: null,
-                ),
-              )
+                  function: (value) {
+                    print(value.toString());
+                    return value;
+                  }),
             ]),
           )),
     );

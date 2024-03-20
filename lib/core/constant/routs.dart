@@ -8,4 +8,6 @@ class Approutes {
   static const String showpoint = "showpoint/";
   static const String createarchive = "createarchive/";
   static const String editarchive = "editarchive/";
+  static const String userindex = "userindex/";
+  static const String createuser = "createuser/";
 }
