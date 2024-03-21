@@ -12,4 +12,7 @@ class Approutes {
   static const String createuser = "createuser/";
   static const String edituser = "edituser/";
   static const String showuser = "showuser/";
+  static const String aboutus = "aboutus/";
+  static const String support = "support/";
+  static const String profile = "profile/";
 }

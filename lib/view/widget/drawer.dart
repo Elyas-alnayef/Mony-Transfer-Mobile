@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:transferapp/core/constant/routs.dart';
 
 import '../../core/constant/color.dart';
 import '../../core/constant/imageassets.dart';
@@ -31,7 +33,9 @@ Widget drawer() => Drawer(
                         height: 24,
                       ),
                       drawerbutton(
-                        function: () {},
+                        function: () {
+                          Get.toNamed(Approutes.aboutus);
+                        },
                         icon: Icons.info_rounded,
                         label: "About Us",
                       ),
@@ -39,7 +43,9 @@ Widget drawer() => Drawer(
                         height: 24,
                       ),
                       drawerbutton(
-                        function: () {},
+                        function: () {
+                          Get.toNamed(Approutes.support);
+                        },
                         icon: Icons.support_agent_rounded,
                         label: "Support",
                       ),
