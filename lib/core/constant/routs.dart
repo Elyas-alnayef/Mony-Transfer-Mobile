@@ -10,4 +10,6 @@ class Approutes {
   static const String editarchive = "editarchive/";
   static const String userindex = "userindex/";
   static const String createuser = "createuser/";
+  static const String edituser = "edituser/";
+  static const String showuser = "showuser/";
 }

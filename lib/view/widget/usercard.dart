@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
+import "package:transferapp/core/constant/routs.dart";
 
 import "../../core/constant/color.dart";
 import "../../core/constant/imageassets.dart";
@@ -82,12 +84,20 @@ Widget usercard({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               smallbutton(
-                  function: () {}, name: "Details", color: Appcolor.primary1),
+                  function: () {
+                    Get.toNamed(Approutes.showuser);
+                  },
+                  name: "Details",
+                  color: Appcolor.primary1),
               const SizedBox(
                 width: 16,
               ),
               smallbutton(
-                  function: () {}, name: "Edit", color: Appcolor.primary1),
+                  function: () {
+                    Get.toNamed(Approutes.edituser);
+                  },
+                  name: "Edit",
+                  color: Appcolor.primary1),
               const SizedBox(
                 width: 16,
               ),

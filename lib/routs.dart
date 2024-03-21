@@ -12,6 +12,8 @@ import 'view/screen/point/index.dart';
 import 'view/screen/point/show.dart';
 import 'view/screen/point/update.dart';
 import 'view/screen/user/create.dart';
+import 'view/screen/user/show.dart';
+import 'view/screen/user/update.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   Approutes.login: (context) => const Login(),
@@ -25,4 +27,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   Approutes.editarchive: (context) => const Updatearchive(),
   Approutes.userindex: (context) => const Usersindex(),
   Approutes.createuser: (context) => const Createuser(),
+  Approutes.edituser: (context) => const Edituser(),
+  Approutes.showuser: (context) => const Showuser(),
 };
