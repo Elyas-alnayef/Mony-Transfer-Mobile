@@ -13,6 +13,8 @@ Widget pointcard({
   required String manager,
   required String currentbalance,
   required String createdate,
+  required Function gotoshow,
+  required Function gotoedit,
 }) =>
     Container(
       padding: const EdgeInsets.all(16.0),
@@ -73,7 +75,7 @@ Widget pointcard({
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Approutes.showpoint);
+                        gotoshow();
                       },
                       child: Text(
                         "More details ..",
@@ -113,7 +115,7 @@ Widget pointcard({
               ),
               smallbutton(
                   function: () {
-                    Get.toNamed(Approutes.updatepoint);
+                    gotoedit();
                   },
                   name: "Edit",
                   color: Appcolor.primary1),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/bottomnavicationbar.dart';
+import '../../../controller/point/showcontroller.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/constant/imageassets.dart';
 import '../../widget/appbar.dart';
@@ -13,6 +14,7 @@ class Showpoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Showpointcontroller controller = Get.put(Showpointcontroller());
     Bottomnavicationbarcontroller bottomcontroller =
         Get.put(Bottomnavicationbarcontroller());
     return Scaffold(
@@ -104,23 +106,25 @@ class Showpoint extends StatelessWidget {
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Al-Haffar"),
+                        Text(controller.point.name!),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("Syria"),
+                        Text(controller.point.country!),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("Elyas-Alnayef", overflow: TextOverflow.ellipsis),
+                        Text(controller.point.managerId.toString(),
+                            overflow: TextOverflow.ellipsis),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("15000\$", overflow: TextOverflow.ellipsis),
+                        Text(controller.point.currentBalance.toString(),
+                            overflow: TextOverflow.ellipsis),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("Azaz-Alhamra mol",
+                        Text(controller.point.adress!,
                             overflow: TextOverflow.ellipsis),
                         SizedBox(
                           height: 8,

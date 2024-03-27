@@ -30,17 +30,25 @@ class Pointindex extends StatelessWidget {
               backgroundColor: MaterialStatePropertyAll(Appcolor.buttoncolor))),
       body: Padding(
           padding: EdgeInsets.all(16.0),
-          child: ListView.separated(
-            itemBuilder: (context, index) => pointcard(
-                name: "Al-Saqeet",
-                adress: "Azaz-center city",
-                country: "Syria",
-                createdate: "2020-10-10",
-                currentbalance: "50000",
-                manager: "Elyas-Alnayef"),
-            itemCount: 10,
-            separatorBuilder: (context, index) => SizedBox(
-              height: 24,
+          child: Obx(
+            () => ListView.separated(
+              itemBuilder: (context, index) => pointcard(
+                  gotoedit: () {
+                    controller.gotoedit(index);
+                  },
+                  gotoshow:() {
+                    controller.gotoshow(index);
+                  },
+                  name: controller.points[index].name,
+                  adress: "$controller.points[index].adress",
+                  country: controller.points[index].country,
+                  createdate: "2020-10-10",
+                  currentbalance: "$controller.points[index].currentBalance",
+                  manager: controller.points[index].managerId.toString()),
+              itemCount: controller.points.length,
+              separatorBuilder: (context, index) => SizedBox(
+                height: 24,
+              ),
             ),
           )),
     );

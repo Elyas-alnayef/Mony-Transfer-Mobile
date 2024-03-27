@@ -1,15 +1,21 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import '../../data/model/point.dart';
+
 class Pointoprations {
   static Future fetchdata(String url, String token) async {
+    List<dynamic> points = [];
     var response = await http.get(Uri.parse(url), headers: {
       'Authorization': 'Bearer $token',
     });
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
+      for (var i = 0; i < data["data"].length; i++) {
+        points.add(Point.FromJason(data["data"][i]));
+      }
       print("doooonnnneee");
-      return data;
+      return points;
     } else {
       var errorcode = response.statusCode.toString();
       print("Status code : $errorcode");
@@ -24,8 +30,9 @@ class Pointoprations {
     });
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
+      Point point = Point.FromJason(data["data"]);
       print("doooonnnneee");
-      return data;
+      return point;
     } else {
       var errorcode = response.statusCode.toString();
       print("Status code : $errorcode");
